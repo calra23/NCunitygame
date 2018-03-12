@@ -50,6 +50,10 @@ public class Player : MonoBehaviour {
 
         animatorCompoment.SetFloat("speed", animatorSpeed);
 
+        SpriteRenderer spriteComponent = GetComponent<SpriteRenderer>();
+
+        spriteComponent.flipX = (velocity.x < 0);
+
         // Set the y (up/down) component of the velocity based on jump
         if (jump == true && touchingGround == true)
         {
